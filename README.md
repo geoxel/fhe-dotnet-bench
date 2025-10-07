@@ -61,7 +61,7 @@ All done
 $ uname -a
 Darwin youpi.local 25.0.0 Darwin Kernel Version 25.0.0: Mon Aug 25 21:17:45 PDT 2025; root:xnu-12377.1.9~3/RELEASE_ARM64_T8103 arm64 arm64 Macmini9,1 Darwin
 ```
-Comparing with WASM and NodeJS native interop goes like this, and showa similar performance improvement as the native NodeJS interop benchmark:
+Comparing with WASM and NodeJS native interop goes like this, and shows similar performance improvement as the native NodeJS interop benchmark:
 | Benchmark | WASM (ms) | Native NodeJS (ms) | Native C# (ms) |
 | ----------- | ----------- | ----------- | ----------- |
 | UInt8  | 1.26 | 0.33 | 0.32 |
