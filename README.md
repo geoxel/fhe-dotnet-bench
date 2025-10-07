@@ -47,7 +47,7 @@ $ dotnet build -c Release
 ## Testing
 Run the C# test and benchmarking code:
 ```bash
-$ dotnet build -c Release
+$ dotnet run -c Release
 Generate keys...
 Encrypting...
 Serialized length: 263448, deserialized value: 42
