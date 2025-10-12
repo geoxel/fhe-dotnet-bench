@@ -13,7 +13,7 @@ public sealed class FheUInt32 : FheHandle
 
     public static FheUInt32 Encrypt(FheClientKey clientKey, uint value)
     {
-        int error = SafeNativeMethods.UInt32_Encrypt(clientKey.Handle, value, out nint out_value);
+        int error = SafeNativeMethods.UInt32_Encrypt(value, clientKey.Handle, out nint out_value);
         if (error != 0)
             throw new FheException(error);
         return new FheUInt32(out_value);
@@ -21,7 +21,7 @@ public sealed class FheUInt32 : FheHandle
 
     public uint Decrypt(FheClientKey clientKey)
     {
-        int error = SafeNativeMethods.UInt32_Decrypt(clientKey.Handle, Handle, out uint out_value);
+        int error = SafeNativeMethods.UInt32_Decrypt(Handle, clientKey.Handle, out uint out_value);
         if (error != 0)
             throw new FheException(error);
         return out_value;
@@ -32,14 +32,20 @@ public sealed class FheUInt32 : FheHandle
         int error = SafeNativeMethods.UInt32_Serialize(Handle, out SafeNativeMethods.DynamicBuffer buffer);
         if (error != 0)
             throw new FheException(error);
-        return DynamicBufferToArray(buffer);
+        return SafeNativeMethods.DynamicBuffer_ToArray(buffer);
     }
 
     public static unsafe FheUInt32 Deserialize(byte[] data)
     {
         fixed (byte* ptr = data)
         {
-            int error = SafeNativeMethods.UInt32_Deserialize(new nint(ptr), data.Length, out nint out_value);
+            var buffer_view = new SafeNativeMethods.DynamicBufferView
+            {
+                pointer = new nint(ptr),
+                length = data.Length,
+            };
+
+            int error = SafeNativeMethods.UInt32_Deserialize(buffer_view, out nint out_value);
             if (error != 0)
                 throw new FheException(error);
             return new FheUInt32(out_value);
