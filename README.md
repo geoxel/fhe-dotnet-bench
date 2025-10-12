@@ -1,4 +1,4 @@
-Building a native TFHE library for .NET C# interop and benchmarking it.
+Building a .NET C# interop on TFHE library and benchmarking it.
 
 ## Setup
 
@@ -15,33 +15,9 @@ Retrieve this repo.
 $ git clone https://github.com/geoxel/fhe-native-and-csharp.git
 ```
 ## Build
-Build the native interop library.
-```bash
-$ cd fhe-native-and-csharp/tfhe-dotnet-lib
-$ mkdir build && cd build
-$ cmake .. && cmake --build .
--- The C compiler identification is AppleClang 17.0.0.17000013
--- The CXX compiler identification is AppleClang 17.0.0.17000013
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/kepler/zama/fhe-native-and-csharp/tfhe-dotnet-lib/build
-[ 50%] Building CXX object CMakeFiles/tfhe-dotnet.dir/lib.cpp.o
-[100%] Linking CXX shared library libtfhe-dotnet.dylib
-[100%] Built target tfhe-dotnet
-```
 Build the .NET test:
 ```bash
-$ cd ../..
+$ cd ..
 $ dotnet build -c Release
 ```
 ## Testing
