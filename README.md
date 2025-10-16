@@ -10,19 +10,21 @@ $ RUSTFLAGS="-C target-cpu=native" cargo +nightly build --release --features=hig
 $ ls -lF target/release
 $ cd ..
 ```
+Retrieve the fhe-dotnet repo and build it.
+```bash
+$ git clone https://github.com/geoxel/fhe-dotnet.git
+$ cd fhe-dotnet
+$ dotnet build -c Release
+$ cd ..
+```
 Retrieve this repo.
 ```bash
-$ git clone https://github.com/geoxel/fhe-native-and-csharp.git
-```
-## Build
-Build the .NET test:
-```bash
-$ cd ..
-$ dotnet build -c Release
+$ git clone https://github.com/geoxel/fhe-dotnet-bench.git
 ```
 ## Testing
 Run the C# test and benchmarking code:
 ```bash
+$ cd fhe-dotnet-bench
 $ dotnet run -c Release
 Generate keys...
 Encrypting...

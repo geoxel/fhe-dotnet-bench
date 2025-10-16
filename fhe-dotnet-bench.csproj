@@ -5,8 +5,13 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="fhe-dotnet">
+      <HintPath>../fhe-dotnet/bin/$(Configuration)/$(TargetFramework)/$(RuntimeIdentifier)/fhe-dotnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
   <PropertyGroup Condition="$([System.OperatingSystem]::IsMacOS())">
     <RuntimeIdentifier>osx-arm64</RuntimeIdentifier>
