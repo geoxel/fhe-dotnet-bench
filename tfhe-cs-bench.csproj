@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="tfhe-cst">
+    <Reference Include="tfhe-cs">
       <HintPath>../tfhe-cs/bin/$(Configuration)/$(TargetFramework)/$(RuntimeIdentifier)/tfhe-cs.dll</HintPath>
     </Reference>
   </ItemGroup>
