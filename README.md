@@ -12,19 +12,19 @@ $ cd ..
 ```
 Retrieve the fhe-dotnet repo and build it.
 ```bash
-$ git clone https://github.com/geoxel/fhe-dotnet.git
-$ cd fhe-dotnet
+$ git clone https://github.com/geoxel/tfhe-cs.git
+$ cd tfhe-cs
 $ dotnet build -c Release
 $ cd ..
 ```
 Retrieve this repo.
 ```bash
-$ git clone https://github.com/geoxel/fhe-dotnet-bench.git
+$ git clone https://github.com/geoxel/tfhe-cs-bench.git
 ```
 ## Testing
 Run the C# test and benchmarking code:
 ```bash
-$ cd fhe-dotnet-bench
+$ cd tfhe-cs-bench
 $ dotnet run -c Release
 Generate keys...
 Encrypting...
